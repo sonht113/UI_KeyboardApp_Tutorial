@@ -7,40 +7,40 @@ import 'package:app_keyboard_shop_tutorial/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
+
 class BottomMenuBar extends StatefulWidget {
-  BottomMenuBar({Key? key}) : super(key: key);
+  const BottomMenuBar({Key? key}) : super(key: key);
 
   @override
   _BottomMenuBarState createState() => _BottomMenuBarState();
 }
 
 class _BottomMenuBarState extends State<BottomMenuBar> {
-
   void nvgToSocket(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => ChatScreen()),
+      MaterialPageRoute(builder: (context) => const ChatScreen()),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 60,
       child: BottomAppBar(
         child: Row(
           children: [
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.home_outlined, color: KColors.primary),
+                icon: const Icon(Icons.home_outlined, color: KColors.primary),
                 onPressed: () {
-    Navigator.of(context)
-        .pushReplacementNamed(ProductsOverviewScreen.routeName);
-    },
+                  Navigator.of(context)
+                      .pushReplacementNamed(ProductsOverviewScreen.routeName);
+                },
               ),
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.payment, color: KColors.icon),
+                icon: const Icon(Icons.payment, color: KColors.icon),
                 onPressed: () {
                   Navigator.of(context)
                       .pushReplacementNamed(OrdersScreen.routeName);
@@ -49,22 +49,22 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.person, color: KColors.icon),
+                icon: const Icon(Icons.person, color: KColors.icon),
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushReplacementNamed(ProFile.routeName);
+                  Navigator.of(context).pushReplacementNamed(ProFile.routeName);
                 },
               ),
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.chat_bubble_outline_rounded, color: KColors.icon),
+                icon: const Icon(Icons.chat_bubble_outline_rounded,
+                    color: KColors.icon),
                 onPressed: () => nvgToSocket(context),
-				),
+              ),
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.settings, color: KColors.icon),
+                icon: const Icon(Icons.settings, color: KColors.icon),
                 onPressed: () {
                   Navigator.of(context)
                       .pushReplacementNamed(SettingsPage.routeName);

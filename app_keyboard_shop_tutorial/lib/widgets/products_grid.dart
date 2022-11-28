@@ -31,7 +31,7 @@ class ProductsGrid extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: 1 / 1,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 20,
+          mainAxisSpacing: 30,
         ),
       ),
     );

@@ -16,57 +16,57 @@ import './screens/profile.dart';
 import './screens/setting_screen.dart';
 
 class MyHttpOverrides extends HttpOverrides {
-	@override
-	HttpClient createHttpClient(SecurityContext? context) {
-		return super.createHttpClient(context)
-				..badCertificateCallback =
-				(X509Certificate cert, String host, int port) => true;
-	}
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
 }
 
 void main() {
-	HttpOverrides.global = MyHttpOverrides();
-	runApp(const MyApp());
+  HttpOverrides.global = MyHttpOverrides();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-	const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-	@override
-	Widget build(BuildContext context) {
-		return MultiProvider(
-				providers: [
-					ChangeNotifierProvider.value(
-							value: Products(),
-					),
-					ChangeNotifierProvider.value(
-							value: Cart(),
-					),
-					ChangeNotifierProvider.value(
-							value: Orders(),
-					),
-				],
-				child: MaterialApp(
-						debugShowCheckedModeBanner: false,
-						title: 'MyShop',
-						theme: ThemeData(
-								primarySwatch: Colors.blueGrey,
-								accentColor: Colors.deepOrange,
-								fontFamily: 'Lat',
-						),
-						home: LoginScreen(),
-						routes: {
-							ProductsOverviewScreen.routeName: (ctx) =>
-									const ProductsOverviewScreen(),
-							ProductDetailScreen.routeName: (ctx) => const ProductDetailScreen(),
-							CartScreen.routeName: (ctx) => const CartScreen(),
-							SignUpScreen.routeName: (ctx) => SignUpScreen(),
-							LoginScreen.routeName: (ctx) => LoginScreen(),
-							ForgotScreen.routeName: (ctx) => ForgotScreen(),
-							ProFile.routeName: (ctx) => ProFile(),
-							OrdersScreen.routeName: (ctx) => const OrdersScreen(),
-							SettingsPage.routeName: (ctx) => SettingsPage(),
-						}),
-						);
-	}
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: Products(),
+        ),
+        ChangeNotifierProvider.value(
+          value: Cart(),
+        ),
+        ChangeNotifierProvider.value(
+          value: Orders(),
+        ),
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'MyShop',
+          theme: ThemeData(
+            primarySwatch: Colors.green,
+            accentColor: Colors.deepOrange,
+            fontFamily: 'Lat',
+          ),
+          home: LoginScreen(),
+          routes: {
+            ProductsOverviewScreen.routeName: (ctx) =>
+                const ProductsOverviewScreen(),
+            ProductDetailScreen.routeName: (ctx) => const ProductDetailScreen(),
+            CartScreen.routeName: (ctx) => const CartScreen(),
+            SignUpScreen.routeName: (ctx) => SignUpScreen(),
+            LoginScreen.routeName: (ctx) => LoginScreen(),
+            ForgotScreen.routeName: (ctx) => ForgotScreen(),
+            ProFile.routeName: (ctx) => const ProFile(),
+            OrdersScreen.routeName: (ctx) => const OrdersScreen(),
+            SettingsPage.routeName: (ctx) => const SettingsPage(),
+          }),
+    );
+  }
 }

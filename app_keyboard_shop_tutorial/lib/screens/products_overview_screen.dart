@@ -1,8 +1,8 @@
 import 'package:app_keyboard_shop_tutorial/widgets/bottom_menu_bar.dart';
-import 'package:flutter/material.dart' ;
-import 'package:provider/provider.dart' ;
-import '../widgets/products_grid.dart' ;
-import '../widgets/badge.dart' ;
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../widgets/products_grid.dart';
+import '../widgets/badge.dart';
 import '../providers/cart.dart';
 import './cart_screen.dart';
 
@@ -21,7 +21,6 @@ class ProductsOverviewScreen extends StatefulWidget {
 class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   var _showOnlyFavorites = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,18 +29,17 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           Container(
             width: MediaQuery.of(context).size.width * 0.755,
             decoration: const BoxDecoration(
-              color:  Colors.white,
+              color: Colors.white,
             ),
             child: const TextField(
               decoration: InputDecoration(
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
-                  hintText: "Search keyboards",
+                  hintText: "Search book",
                   prefixIcon: Icon(Icons.search),
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 20,
-                  )
-              ),
+                  )),
             ),
           ),
           PopupMenuButton(
@@ -84,8 +82,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           ),
         ],
       ),
-      body:ProductsGrid(_showOnlyFavorites),
-      bottomNavigationBar: BottomMenuBar(),
+      body: ProductsGrid(_showOnlyFavorites),
+      bottomNavigationBar: const BottomMenuBar(),
     );
   }
 }

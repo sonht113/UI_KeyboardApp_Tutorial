@@ -2,7 +2,6 @@ import 'package:app_keyboard_shop_tutorial/providers/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class CartItem extends StatelessWidget {
   final String id;
   final String productId;
@@ -11,12 +10,12 @@ class CartItem extends StatelessWidget {
   final String title;
 
   CartItem(
-      this.id,
-      this.productId,
-      this.price,
-      this.quantity,
-      this.title,
-      );
+    this.id,
+    this.productId,
+    this.price,
+    this.quantity,
+    this.title,
+  );
 
   @override
   Widget build(BuildContext context) {

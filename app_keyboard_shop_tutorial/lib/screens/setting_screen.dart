@@ -3,7 +3,6 @@ import 'package:app_keyboard_shop_tutorial/widgets/bottom_menu_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SettingsPage extends StatefulWidget {
   static const routeName = '/setting';
 
@@ -110,10 +109,7 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 40,
             ),
             Center(
-              child: OutlineButton(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
+              child: OutlinedButton(
                 onPressed: () {
                   Navigator.of(context)
                       .pushReplacementNamed(LoginScreen.routeName);
